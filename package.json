@@ -3,12 +3,9 @@
   "version": "1.0.0",
   "description": "Manga backend with upload support",
   "main": "server.js",
- "scripts": {
-  "dev": "vite",
-  "build": "npx vite build",
-  "preview": "vite preview"
-},
-
+  "scripts": {
+    "start": "node server.js"         
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
