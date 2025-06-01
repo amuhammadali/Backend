@@ -3,14 +3,17 @@ const express = require('express');
 const cors = require('cors');
 const petsRouter = require('./routes/petsRouter');
 const app = express();
+
+// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// 
+app.use('/pets', petsRouter);
 
-app.use('/pets',petsRouter)
-
-
-app.listen(2222, () => {
-  console.log("Server is running on port 2222");
+// ⚠️ PORT dinamik bo‘lishi kerak
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`✅ Server is running on port ${PORT}`);
 });
